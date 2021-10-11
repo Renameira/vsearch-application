@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 app.config['dbconfig'] = {'host': '127.0.0.1',
                           'user': 'renato',
-                          'password': '59F500bf',
+                          'password': 'xxxxx',
                           'database': 'vsearchlogDB', }
 
 
