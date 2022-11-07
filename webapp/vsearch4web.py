@@ -13,7 +13,7 @@ dbconfig = {
 app = Flask(__name__)
 
 
-def log_request(req: "request_flask", res: str) -> None:
+def log_request(req, res: str) -> None:
     with UseDatabase(**dbconfig) as cursor:
 
         _SQL = """ 
@@ -51,7 +51,7 @@ def do_search() -> str:
 
 @app.route("/")
 @app.route("/entry")
-def entry_page() -> "html":
+def entry_page():
     """Display this webapp's HTML form."""
     return render_template(
         "entry.html", the_title="Welcome to search4letters on the web!"
