@@ -1,6 +1,0 @@
-ImmutableMultiDict([('phrase', 'Louisi é rica'), ('letters', 'aeiou')])|127.0.0.1|Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36|{'a', 'i', 'o', 'u'}
-ImmutableMultiDict([('phrase', 'Louisi'), ('letters', 'aeiou')])|127.0.0.1|Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36|{'i', 'o', 'u'}
-ImmutableMultiDict([('phrase', 'Estou em cabo Frio'), ('letters', 'aeiou')])|127.0.0.1|Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36|{'i', 'e', 'o', 'a', 'u'}
-ImmutableMultiDict([('phrase', 'adeus>'), ('letters', 'aeiou')])|127.0.0.1|Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36|{'a', 'u', 'e'}
-ImmutableMultiDict([('phrase', 'Oi'), ('letters', 'aeiou')])|127.0.0.1|Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36|{'i'}
-ImmutableMultiDict([('phrase', 'renato eu te amo demais, mesmo voce sendo meio chato'), ('letters', 'aeiou')])|127.0.0.1|Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36|{'i', 'e', 'o', 'a', 'u'}
