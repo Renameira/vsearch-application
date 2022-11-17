@@ -6,7 +6,7 @@ use vsearchlogDB;
 
 show tables;
 
-grant all on vsearchlogdb.* to 'vsearch' identified by 'password';
+grant all on vsearchlogDB.* to 'vsearch' identified by 'password';
 
 create table log(
 id int auto_increment primary key,
