@@ -14,10 +14,10 @@ xxxxxxxxxxxxxxxxx
 | id |  int auto_increment  	|   PRIMARY KEY	| 
 |ts		|  timestamp	|   	| 
 |phrase		|  varchar(128)		|   NOT NULL	| 
-|letters			|  varchar(32) 	|   			| 
-|ip		|  varchar(16)	|   			| 
-|browser_string		|  varchar(256)	|   			| 
-|results		|  varchar(64)		|   			| 
+|letters			|  varchar(32) 	|   	 NOT NULL		| 
+|ip		|  varchar(16)	|  NOT NULL  			| 
+|browser_string		|  varchar(256)	|  NOT NULL  			| 
+|results		|  varchar(64)		|  NOT NULL  			| 
 
 
 ## Project Architecture
