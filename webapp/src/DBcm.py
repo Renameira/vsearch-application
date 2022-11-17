@@ -20,12 +20,20 @@ class SQLError(Exception):
 
 
 class UseDatabase:
-    def __init__(self, configuration: dict):
-        self.configuration = configuration
+    def __init__(self, host: str, user: str, password: str, database: str):
+        self.host = host
+        self.user = user
+        self.password = password
+        self.database = database
 
     def __enter__(self):
         try:
-            self.conn = mysql.connector.connect(**self.configuration)
+            self.conn = mysql.connector.connect(
+                host=self.host,
+                user=self.user,
+                password=self.password,
+                database=self.database,
+            )
             self.cursor = self.conn.cursor()
             return self.cursor
         except mysql.connector.errors.InterfaceError as err:

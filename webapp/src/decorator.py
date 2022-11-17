@@ -16,6 +16,6 @@ def check_logged_in(func):
 def uppercase_output(func):
     @wraps(func)
     def wrapper(*args, **kwargs):
-        return func().upper()
+        return func(*args, **kwargs).upper()
 
     return wrapper

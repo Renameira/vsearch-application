@@ -15,13 +15,22 @@ from src.DBcm import (
 )
 from src.decorator import check_logged_in
 from threading import Thread
+import logging
+import configparser
 
-dbconfig = {
-    "host": "127.0.0.1",
-    "user": "vsearch",
-    "password": "password",
-    "database": "vsearchlogDB",
-}
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s",
+)
+
+config = configparser.ConfigParser()
+config.read("config/.env", encoding="utf-8-sig")
+
+HOST_DATABASE = config["DATABASE"]["HOST"]
+USER_DATABASE = config["DATABASE"]["USER"]
+PASSWORD_DATABASE = config["DATABASE"]["PASSWORD"]
+NAME_DATABASE = config["DATABASE"]["DATABASE"]
 
 
 app = Flask(__name__)
@@ -36,7 +45,12 @@ def do_search() -> str:
     @copy_current_request_context
     def log_request(req, res: str) -> None:
         """Log details of the web request and the results."""
-        with UseDatabase(dbconfig) as cursor:
+        with UseDatabase(
+            host=HOST_DATABASE,
+            user=USER_DATABASE,
+            password=PASSWORD_DATABASE,
+            database=NAME_DATABASE,
+        ) as cursor:
             _SQL = """insert into log
                     (phrase, letters, ip, browser_string, results)
                     values
@@ -60,7 +74,7 @@ def do_search() -> str:
         t = Thread(target=log_request, args=(request, results))
         t.start()
     except Exception as err:
-        print("***** Logging failed with this error:", str(err))
+        logging.info(f"Logging failed with this error: {str(err)}")
     return render_template(
         "results.html",
         the_title=title,
@@ -83,7 +97,12 @@ def entry_page():
 @check_logged_in
 def view_the_log() -> str:
     try:
-        with UseDatabase(dbconfig) as cursor:
+        with UseDatabase(
+            host=HOST_DATABASE,
+            user=USER_DATABASE,
+            password=PASSWORD_DATABASE,
+            database=NAME_DATABASE,
+        ) as cursor:
             _SQL = """
                 select 
                     phrase, 
@@ -114,13 +133,13 @@ def view_the_log() -> str:
         )
 
     except ConnectionError as err:
-        print("Is your database switched on? Error:", str(err))
+        logging.info(f"Is your database switched on? Error: {str(err)}")
     except CredentialsError as err:
-        print("User-id/Password issues. Error:", str(err))
+        logging.info(f"User-id/Password issues. Error: {str(err)}")
     except SQLError as err:
-        print("Is your query correct? Error:", str(err))
+        logging.info("Is your query correct? Error: {str(err)}")
     except Exception as err:
-        print("Something went wrong:", str(err))
+        logging.info(f"Something went wrong: {str(err)}")
     return render_template(
         "message.html",
         the_title="There was an error, try again!",
