@@ -1,9 +1,21 @@
 # Vsearch Application
 
-## Overview
+## Description
 <br>
 
-xxxxxxxxxxxxxxxxx
+The objective of the project was to build an application in the Python 3 language, which consists of finding letters in sentences, requested by the user using a web page and storing these queries in a register repository.
+For this project, the structuring of the user interface was used, using HTML and CSS.
+An algorithm was also developed to carry out the logic of the vsearch program, in addition to creating routes and storing requests made by the requester in a database.
+It is important to mention that for this project I`m choose mysql to be the database.
+
+## was used:
+
+- Main python libraries (mysql.connector, flask, jinja2 among others)
+- Class
+- Decorators
+- Docker
+- HTML and CSS
+- Mysql
 
 ## Data model
 
@@ -52,14 +64,14 @@ xxxxxxxxxxxxxxxxx
 ## Python File:
 
 1. weabbp/
-	- main.py: xxxxxxx
+	- main.py: The `main.py` module is the first to run, with the aim of pulling the whole project together using the necessary modules.
 
 2. src/ 
-	- DBcm.py : xxxxxxxx
+	- DBcm.py : context manage of database 
 
-	- decorator.py: xxxxxxxx
+	- decorator.py: decorator using in project to check if session is active
 
-	- vsearch.py: xxxxxxxxxx 
+	- vsearch.py: the logic of the program
 
 ## How to run scripts
 <br>
@@ -71,35 +83,38 @@ Then set the `.env` in config file (if you have some problem, there is `.env.exa
 make install && source venv/bin/activate
 ```
 
+Set user and password in docker-compose.yml and run this code
 ``` bash
 docker-compose -f docker/docker-compose.yml up -d 
 ```
 
+See postgres running on docker
 ``` bash
 docker ps
 ```
 
+Enter inside the container and create the database and table
 ``` bash
 docker exec -it 'id_docker' bash
 ```
 
+authenticate to mysql and before don`t forgot write your password in terminal
 ``` bash
 mysql -u root -p 
 ```
-after inform password
-
-
-In the help folder, copy the database command and execute:
+creating database
 ``` bash
 create database vsearchlogDB;
 ```
 
+changing database to vsearchlogDB
 ```bash
 use vsearchlogDB;
 ```
 
+grant permission for <user>
 ``` bash 
-grant all on vsearchlogDB.* to 'vsearch' identified by 'password';
+grant all on vsearchlogDB.* to <user> identified by <password>;
 ```
 
 ```bash
