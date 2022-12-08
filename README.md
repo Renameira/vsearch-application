@@ -140,3 +140,23 @@ Run python script that consist in execute application:
 ``` bash
 python3 webapp/main.py
 ```
+
+
+# How can we test if the application is working
+
+If the application runs without errors, choose a browser of your choice and access the URL below.
+You will see a screen that says "Welcome to search4letters on the web!". 
+If you don't see these sentences, something is wrong.
+
+- [localhost](http://127.0.0.1:5000/)
+
+perform some tests in the application, typing some phrases, choosing the letters and press button submit.
+
+After, you will see that this page will be blocked until you log in, which is the next step:
+- [viewlog](http://127.0.0.1:5000/viewlog)
+
+Then, simulate a login with the url
+- [login](http://127.0.0.1:5000/login)
+
+you access this URL to visualize the history of phrases
+- [viewlog](http://127.0.0.1:5000/viewlog)
