@@ -8,7 +8,7 @@ For this project, the structuring of the user interface was used, using HTML and
 An algorithm was also developed to carry out the logic of the vsearch program, in addition to creating routes and storing requests made by the requester in a database.
 It is important to mention that for this project I`m choose mysql to be the database.
 
-## was used:
+## it was used:
 
 - Main python libraries (mysql.connector, flask, jinja2 among others)
 - Class
@@ -79,6 +79,13 @@ It is important to mention that for this project I`m choose mysql to be the data
 First of all, initialize a virtual environment with project dependency, using the script bellow.
 Then set the `.env` in config file (if you have some problem, there is `.env.example` for support):
 
+
+- Variables:
+    - **HOST**: ip or url of database 
+    - **USER**:      database user
+    - **PASSWORD**:  database password  
+    - **DATABASE**:  database
+
 ``` bash
 make install && source venv/bin/activate
 ```
@@ -88,17 +95,17 @@ Set user and password in docker-compose.yml and run this code
 docker-compose -f docker/docker-compose.yml up -d 
 ```
 
-See postgres running on docker
+See mysql running on docker
 ``` bash
 docker ps
 ```
 
-Enter inside the container and create the database and table
+Enter the container and create the database and table
 ``` bash
 docker exec -it 'id_docker' bash
 ```
 
-authenticate to mysql and before don`t forgot write your password in terminal
+authenticate to mysql and after don`t forgot write your password, which you define in config folder, in terminal
 ``` bash
 mysql -u root -p 
 ```
@@ -114,9 +121,10 @@ use vsearchlogDB;
 
 grant permission for <user>
 ``` bash 
-grant all on vsearchlogDB.* to <user> identified by <password>;
+grant all on vsearchlogDB.* to <user> identified by '<password>';
 ```
 
+creating log table
 ```bash
 create table log(
 id int auto_increment primary key,
