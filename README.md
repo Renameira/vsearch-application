@@ -150,21 +150,21 @@ If you don't see these sentences, something is wrong.
 
 - [localhost](http://127.0.0.1:5000/)
 
-![Alt text](https://file%2B.vscode-resource.vscode-cdn.net/Users/renatomeira/project/personal/vsearch-application/assets/entry.png?version%3D1670540578295)
+<img src="./assets/entry.png">
 
 perform some tests in the application, typing some phrases, choosing the letters and press button submit.
 
 After, you will see that this page will be blocked until you log in, which is the next step:
 - [viewlog](http://127.0.0.1:5000/viewlog)
 
-![Alt text](https://file%2B.vscode-resource.vscode-cdn.net/Users/renatomeira/project/personal/vsearch-application/assets/necessary_login.png?version%3D1670539819776)
+<img src="./assets/necessary_login.png">
 
 Then, simulate a login with the url
 - [login](http://127.0.0.1:5000/login)
 
-![Alt text](https://file%2B.vscode-resource.vscode-cdn.net/Users/renatomeira/project/personal/vsearch-application/assets/login.png?version%3D1670539905453)
+<img src="./assets/login.png">
 
 you access this URL to visualize the history of phrases
 - [viewlog](http://127.0.0.1:5000/viewlog)
 
-![Alt text](https://file%2B.vscode-resource.vscode-cdn.net/Users/renatomeira/project/personal/vsearch-application/assets/viewlog.png?version%3D1670538979414)
+<img src="./assets/viewlog.png">
