@@ -6,3 +6,5 @@ responses
 werkzeug==2.0.3
 black
 mysql-connector-python
+gunicorn
+requests
